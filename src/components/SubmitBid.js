@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react'
 
 function SubmitBid() {
-   function submitBid() {
-    await fetch('https://interview-ry.herokuapp.com/bid', {
+  function submitBid() {
+    fetch('https://interview-ry.herokuapp.com/bid', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
