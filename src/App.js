@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import React, {useState, useEffect} from 'react'
+import CardList from './components/CardList'
+import Modal from './components/Modal'
+import SubmitBid from './components/SubmitBid'
+import {io} from 'socket.io-client'
+var socket = io('https://interview-ry.herokuapp.com/')
 
 function App() {
+  const [bids, setBids] = useState([])
+  const [newBid, setNewBid] = useState(false)
+  useEffect(() => {
+    socket.on('item', bid => {
+      setBids([
+        {
+          id: bid.id,
+          tokenId: bid.tokenId,
+          image: bid.imageUrl,
+          favoritesCount: bid.favoritesCount,
+          chain: bid.assetContract.chain,
+          owner: bid.creator.address,
+          collectionName: bid.collection.name,
+          collectionImage: bid.collection.imageUrl,
+          price: bid.orderData.bestAsk.usdSpotPrice,
+        },
+      ])
+    })
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="header">
+        <h3>Header</h3>
+        <button>Add Bid</button>
+      </div>
+      <div className="collection">
+        <CardList bids={bids} />
+      </div>
+
+      <Modal open={!!newBid} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
