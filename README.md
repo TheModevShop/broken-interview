@@ -24,7 +24,7 @@ socket.on("item", (bid) => {
     id: bid.id,
     tokenId: bid.tokenId,
     image: bid.imageUrl,
-    favoritesCount: bid.  favoritesCount,
+    favoritesCount: bid.favoritesCount,
     chain: bid.assetContract.chain,
     owner: bid.creator.address,
     collectionName: bid.collection.name,
@@ -38,7 +38,15 @@ We understand not everyone has worked with web sockets before. You can think of
 `socket.on('some_event', (data) => {})` as if it were an event listener like so
 `window.addEventListener('resize', reportWindowSize);`
 
+
+The creative challenge: Lets design a card that resembles the image below
+
+<img width="376" alt="Fine Cats" src="https://user-images.githubusercontent.com/1517775/173403240-384c3d06-7878-4c04-a1da-5af2041228be.png">
+
+
 ---
+
+
 
 # Getting Started with Create React App
 
