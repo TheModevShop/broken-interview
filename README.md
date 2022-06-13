@@ -8,7 +8,7 @@ a web socket connection. We will want to display the 10 unique NFTs coming back
 in our UI as a list of Cards.
 
 When we receive the `item` event containing the new bid we don't want to add the
-card if we already have that NFT item in our state. In this case, we only want
+card to our UI if we already have that NFT item in our state. In this case, we only want
 the `PRICE` to update.
 
 ### Connect to the web socket and subscribe to the event "item"
