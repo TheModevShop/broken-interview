@@ -10,7 +10,7 @@ back in our UI.
 When we receive the `item` event containing If we already have that NFT in our
 state we only want the `PRICE` to update.
 
-###Connect to the web socket and subscribe to the event “item”
+### Connect to the web socket and subscribe to the event “item”
 
 The web socket exposes an event called “item” which has JSON for NFT bids. Some
 of the data we want to expose is below.
@@ -28,13 +28,12 @@ socket.on("item", (bid) => {
     collectionImage: bid.collection.imageUrl,
     price: bid.orderData.bestAsk.usdSpotPrice
   }
-});```
+});
+```
 
 Your `localhost` post must be 8000 - `PORT=8000 npm start`
 
-#
-#
-#
+_____________________
 
 # Getting Started with Create React App
 
