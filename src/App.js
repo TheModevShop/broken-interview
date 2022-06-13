@@ -7,20 +7,21 @@ import {io} from 'socket.io-client'
 var socket = io('https://interview-ry.herokuapp.com/')
 
 function App() {
-  const [bids, setBids] = useState([])
+  const [bids, setBids] = useState()
   const [newBid, setNewBid] = useState(false)
 
   return (
     <div className="App">
       <div className="header">
-        <h3>Header</h3>
-        <button>Add Bid</button>
+        <h3>All Bids</h3>
       </div>
       <div className="collection">
         <CardList bids={bids} />
       </div>
 
-      <Modal open={!!newBid} />
+      <Modal open={!!newBid}>
+        <SubmitBid item={newBid} />
+      </Modal>
     </div>
   )
 }

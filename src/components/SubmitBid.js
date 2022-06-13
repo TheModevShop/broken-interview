@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 
-function SubmitBid() {
+function SubmitBid({item}) {
   function submitBid() {
     fetch('https://interview-ry.herokuapp.com/bid', {
       method: 'POST',
