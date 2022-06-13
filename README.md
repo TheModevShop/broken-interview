@@ -39,7 +39,7 @@ We understand not everyone has worked with web sockets before. You can think of
 `window.addEventListener('resize', reportWindowSize);`
 
 
-The creative challenge: Lets design a card that resembles the image below
+The creative challenge: Lets design a grid of cards that match the image below
 
 <img width="376" alt="Fine Cats" src="https://user-images.githubusercontent.com/1517775/173403240-384c3d06-7878-4c04-a1da-5af2041228be.png">
 
