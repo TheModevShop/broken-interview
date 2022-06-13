@@ -7,9 +7,8 @@ There are 10 unique NFTs that have a constant stream of new bids coming in from
 a web socket connection. We will want to display the 10 unique NFTs coming back
 in our UI as a list of Cards.
 
-When we receive the `item` event containing the new bid we don't want to add the
-card to our UI if we already have that NFT item in our state. In this case, we only want
-the `PRICE` to update.
+When we receive the `item` event containing a new bid, and we already have that NFT item in our state, we do not want to add the
+card to our UI. In this case, we only want the `PRICE` to update on the existing card.
 
 ### Connect to the web socket and subscribe to the event "item"
 
