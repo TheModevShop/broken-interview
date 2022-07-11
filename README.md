@@ -34,8 +34,8 @@ socket.on("item", (bid) => {
 ```
 
 We understand not everyone has worked with web sockets before. You can think of
-`socket.on('some_event', (data) => {})` as if it were an event listener like so
-`window.addEventListener('resize', reportWindowSize);`
+`socket.on('item', (data) => {})` as if it were an event listener like so
+`window.addEventListener('resize', () => {});`
 
 
 The creative challenge: Lets design a grid of cards that match the image below
