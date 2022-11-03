@@ -12,7 +12,7 @@ card to our UI. In this case, we only want the `PRICE` to update on the existing
 
 ### Connect to the web socket and subscribe to the event "item"
 
-The web socket exposes an event called “item” which has JSON for NFT bids. Some
+The web socket exposes an event called “item” which emits JSON for a single NFT bid. Some
 of the data we want to expose is below.
 
 Socket Docs:
